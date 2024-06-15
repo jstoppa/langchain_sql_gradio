@@ -1,6 +1,6 @@
-# Demo using LangChain to connect to SQL and chat using Gradio
+# Query your database with AI using LangChain and Gradio
 
-See tutorial at <URL>
+Read the tutorial "[Query your database with AI using LangChain and Gradio](https://jstoppa.com/posts/artificial-intelligence/fundamentals/query-your-database-with-ai-using-langchain-and-gradio/post/)" that explains how this repo works
 
 ## Setup
 
