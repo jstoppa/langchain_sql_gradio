@@ -9,19 +9,10 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain.schema import AIMessage, HumanMessage
 from operator import itemgetter
 import gradio as gr
-from langchain.agents import create_sql_agent
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker
-
 
 api_key = os.environ.get("OPENAI_API_KEY")
 
-connection_string = "<connection string>"
-engine = create_engine(connection_string)
-Session = sessionmaker(bind=engine)
-session = Session()
-
-db = SQLDatabase(engine, include_tables=["Table"]) 
+db = SQLDatabase.from_uri("sqlite:///northwind.db") 
 
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=api_key, streaming=True)
 chain = create_sql_query_chain(llm, db)
