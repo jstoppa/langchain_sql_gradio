@@ -8,26 +8,26 @@ See tutorial at <URL>
 2. Install virtual environment
 
 ```bash
-    pip install virtualenv
+pip install virtualenv
 ```
 
 3. Navigate to the folder where you want to create the VM and run the below
    NOTE: Run the command below from one level up where you installed the repo - e.g. if you downloaded the repo to C:\repo\langchain_sql_gradio, you need to run the command below from C:\repo
 
 ```bash
-    virtualenv langchain_sql_gradio
+virtualenv langchain_sql_gradio
 ```
 
 4. Activate the environment by using
 
 ```bash
-    .\ai_env\Scripts\activate
+.\langchain_sql_gradio\Scripts\activate
 ```
 
 5. Inside the Virtual environment, install all required components
 
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 6. Create a the following environment variables (see [this example](https://jstoppa.com/posts/getting_started_with_openai_in_python/post/#5-creating-a-hello-world-app-with-openai) )
