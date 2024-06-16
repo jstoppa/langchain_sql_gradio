@@ -2,7 +2,7 @@
 
 Read the tutorial "[Query your database with AI using LangChain and Gradio](https://jstoppa.com/posts/artificial-intelligence/fundamentals/query-your-database-with-ai-using-langchain-and-gradio/post/)" that explains how this repo works
 
-https://jstoppa.com/posts/artificial-intelligence/fundamentals/query-your-database-with-ai-using-langchain-and-gradio/demo_langchain_sql_gradio.mp4
+![Alt text](demo.gif)
 
 ## Setup
 
