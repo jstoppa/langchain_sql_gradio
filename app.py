@@ -10,11 +10,9 @@ from langchain.schema import AIMessage, HumanMessage
 from operator import itemgetter
 import gradio as gr
 
-api_key = os.environ.get("OPENAI_API_KEY")
-
 db = SQLDatabase.from_uri("sqlite:///northwind.db") 
 
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=api_key, streaming=True)
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=os.environ.get("OPENAI_API_KEY"), streaming=True)
 chain = create_sql_query_chain(llm, db)
 
 execute_query = QuerySQLDataBaseTool(db=db)
@@ -23,20 +21,13 @@ chain = write_query | execute_query
 
 answer_prompt = PromptTemplate.from_template(
     """Given the following user question, corresponding SQL query, and SQL result, answer the user question.
-
 Question: {question}
 SQL Query: {query}
 SQL Result: {result}
-Answer: """
-)
+Answer: """)
 
 answer = answer_prompt | llm | StrOutputParser()
-chain = (
-    RunnablePassthrough.assign(query=write_query).assign(
-        result=itemgetter("query") | execute_query
-    )
-    | answer
-)
+chain = (RunnablePassthrough.assign(query=write_query).assign(result=itemgetter("query") | execute_query) | answer )
 
 def stream_response(input_text, history):
     history = history or []
@@ -54,9 +45,6 @@ def stream_response(input_text, history):
             
             yield partial_message
 
-iface = gr.ChatInterface(
-    stream_response,
-    textbox=gr.Textbox(placeholder="Ask a question about the database...", container=False, scale=7),
-)
+iface = gr.ChatInterface( stream_response, textbox=gr.Textbox(placeholder="Ask a question about the database...", container=False, scale=7),)
 
 iface.launch(share=True)
