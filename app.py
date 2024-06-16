@@ -10,9 +10,9 @@ from langchain.schema import AIMessage, HumanMessage
 from operator import itemgetter
 import gradio as gr
 
-db = SQLDatabase.from_uri("sqlite:///northwind.db") 
-
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=os.environ.get("OPENAI_API_KEY"), streaming=True)
+
+db = SQLDatabase.from_uri("sqlite:///northwind.db") 
 chain = create_sql_query_chain(llm, db)
 
 execute_query = QuerySQLDataBaseTool(db=db)
