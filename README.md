@@ -30,11 +30,13 @@ virtualenv langchain_sql_gradio
 pip install -r requirements.txt
 ```
 
-6. Create a the following environment variables (see [this example](https://jstoppa.com/posts/getting_started_with_openai_in_python/post/#5-creating-a-hello-world-app-with-openai) )
+6. Install SQLLite from [their website](https://sqlite.org/), this is needed to run the engine so that the Python script has access to the DB.
+
+7. Create a the following environment variables (see [this example](https://jstoppa.com/posts/getting_started_with_openai_in_python/post/#5-creating-a-hello-world-app-with-openai) )
 
 -   OPENAI_API_KEY -> used for connecting to OpenAI
 
-7. After doing all the previous steps, you might need to restart your machine, I have noticed that the environment variables are not picked up by Python until a restart or the PIP install doesn't quite work
+8. After doing all the previous steps, you might need to restart your machine, I have noticed that the environment variables are not picked up by Python until a restart or the PIP install doesn't quite work
 
 ## Notes for using the repo
 
@@ -44,3 +46,7 @@ pip install -r requirements.txt
 ```bash
 pip freeze > requirements.txt
 ```
+
+## Citations
+
+The Northwind SQLlite used in this repo was taken from the repo https://github.com/jpwhite3/northwind-SQLite3/tree/main/dist
