@@ -2,6 +2,8 @@
 
 Read the tutorial "[Query your database with AI using LangChain and Gradio](https://jstoppa.com/posts/artificial-intelligence/fundamentals/query-your-database-with-ai-using-langchain-and-gradio/post/)" that explains how this repo works
 
+![Alt text](https://jstoppa.com/posts/artificial-intelligence/fundamentals/query-your-database-with-ai-using-langchain-and-gradio/demo_langchain_sql_gradio.mp4)
+
 ## Setup
 
 1. Download Python and PIP in your local machine (see [this article](https://jstoppa.com/posts/getting_started_with_openai_in_python/post/) )
