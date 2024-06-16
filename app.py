@@ -13,10 +13,10 @@ import gradio as gr
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=os.environ.get("OPENAI_API_KEY"), streaming=True)
 
 db = SQLDatabase.from_uri("sqlite:///northwind.db") 
-chain = create_sql_query_chain(llm, db)
 
 execute_query = QuerySQLDataBaseTool(db=db)
 write_query = create_sql_query_chain(llm, db)
+chain = create_sql_query_chain(llm, db)
 chain = write_query | execute_query
 
 answer_prompt = PromptTemplate.from_template(
