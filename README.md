@@ -47,6 +47,6 @@ pip install -r requirements.txt
 pip freeze > requirements.txt
 ```
 
-## Citations
+## References
 
 The Northwind SQLlite used in this repo was taken from the repo https://github.com/jpwhite3/northwind-SQLite3/tree/main/dist
